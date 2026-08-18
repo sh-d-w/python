@@ -21,3 +21,6 @@
 
   # to download the vosk models:
   goto: https://alphacephei.com/vosk/models
+
+# improvements:
+  # We could perhaps wget or curl -OL auto download a model for you.
