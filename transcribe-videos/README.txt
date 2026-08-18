@@ -15,6 +15,9 @@
   # to hard burn it:
   ffmpeg -i input.mp4 -vf "subtitles=output.srt" output-hard.mp4
 
-# extra methods:
+# extra information:
   # to extract audio from your video:
   ffmpeg -i input.webm -vn -c:a libmp3lame -q:a 2 output.mp3
+
+  # to download the vosk models:
+  goto: https://alphacephei.com/vosk/models
