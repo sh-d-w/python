@@ -8,6 +8,9 @@
 
 # You can edit that .srt file if you encounter any spelling errors.
 
+# First install the following package with pip:
+pip install vosk soundfile
+
 # to stitch it back we use the following ffmpeg command:
   # to soft embed it:
   ffmpeg -i input.mp4 -i output.srt -c copy -c:s mov_text output-soft.mp4
