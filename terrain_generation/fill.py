@@ -1,7 +1,9 @@
 # Rule: Identifies cells completely enclosed by numbers and fills them with a higher value, leaving the outer layer as a border ring.
 
+import sys
+
 # map_expanded.txt
-def run_fill(input_file="heightmap.txt", output_file="map_filled.txt", fill_val=2):
+def run_fill(toReplace_val='1', fill_val=2, input_file="heightmap.txt", output_file="heightmap.txt"):
     with open(input_file, "r") as f:
         grid = [line.strip().split() for line in f if line.strip()]
         
@@ -12,7 +14,7 @@ def run_fill(input_file="heightmap.txt", output_file="map_filled.txt", fill_val=
         for c in range(1, cols - 1):
             # Check if surrounded on all 4 sides by valid numbers (not 'U')
             neighbors = [grid[r-1][c], grid[r+1][c], grid[r][c-1], grid[r][c+1]]
-            if all(n != 'U' for n in neighbors):
+            if all(n == (toReplace_val) for n in neighbors):
                 new_grid[r][c] = str(fill_val)
                 
     with open(output_file, "w") as f:
@@ -21,4 +23,11 @@ def run_fill(input_file="heightmap.txt", output_file="map_filled.txt", fill_val=
     print(f"Inner Fill complete -> Saved to {output_file}")
 
 if __name__ == "__main__":
-    run_fill()
+    toReplaceVal = '1'
+    fillVal = 2
+
+    if len(sys.argv) > 2:
+        toReplaceVal = sys.argv[1]
+        fillVal = int(sys.argv[2])
+
+    run_fill(toReplaceVal, fillVal)

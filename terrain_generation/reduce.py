@@ -3,7 +3,9 @@
 #	This is the perfect counterpart to expanse.py for eroding
 #	structures or opening up cave entrances.
 
-def run_reduce(filename="heightmap.txt", output_file="map_reduced.txt", target=1):
+import sys
+
+def run_reduce(target=1, filename="heightmap.txt", output_file="heightmap.txt"):
     # Read the current grid state
     with open(filename, "r") as f:
         grid = [line.strip().split() for line in f if line.strip()]
@@ -39,4 +41,9 @@ def run_reduce(filename="heightmap.txt", output_file="map_reduced.txt", target=1
 
 if __name__ == "__main__":
     # Example: Erode the outer edges of your base layer '1's into 'U's
-    run_reduce(target=1)
+
+    targetValue = 1
+    if len(sys.argv) > 1:
+        targetValue = int(sys.argv[1])
+
+    run_reduce(target=targetValue)

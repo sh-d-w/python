@@ -24,6 +24,13 @@
         This is the perfect counterpart to expanse.py for eroding
         structures or opening up cave entrances.
 
+
+# mesh_generator_new.py
+    Rule: generates terrain like map from the heightmap.txt
+        this one doesn't triangulate giving a better
+        actual terrain shape. Works well with blenders
+        subdivision modifier.
+
 # mesh_generator_final.py
     Rule: generates terrain like map from the heightmap.txt
 

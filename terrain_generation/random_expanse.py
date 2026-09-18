@@ -1,8 +1,9 @@
 # Rule: Finds any target number (like 1) and duplicates it outward into any touching U empty spaces.
 
 import sys
+import random
 
-def run_expanse(target=1, replace = 'U', special_replace_value = -1, input_file="heightmap.txt", output_file="heightmap.txt"):
+def run_expanse(target=1, replace = 'U', input_file="heightmap.txt", output_file="heightmap.txt"):
     # Read grid
     with open(input_file, "r") as f:
         grid = [line.strip().split() for line in f if line.strip()]
@@ -16,11 +17,10 @@ def run_expanse(target=1, replace = 'U', special_replace_value = -1, input_file=
             if grid[r][c] == str(target):
                 for dr, dc in [(-1,0), (1,0), (0,-1), (0,1)]:
                     nr, nc = r + dr, c + dc
-                    if 0 <= nr < rows and 0 <= nc < cols and grid[nr][nc] == replace:
-                        if special_replace_value != -1:
-                            new_grid[nr][nc] = str(special_replace_value)
-                        else:
-                            new_grid[nr][nc] = str(target)
+                    randomlyGenOrNot = bool(random.getrandbits(1))
+
+                    if randomlyGenOrNot and 0 <= nr < rows and 0 <= nc < cols and grid[nr][nc] == replace:
+                        new_grid[nr][nc] = str(target)
                         
     # Write output file
     with open(output_file, "w") as f:
@@ -31,12 +31,9 @@ def run_expanse(target=1, replace = 'U', special_replace_value = -1, input_file=
 if __name__ == "__main__":
     targetValue = 1
     replaceValue = 'U'
-    specialReplaceValue = -1
     if len(sys.argv) > 1:
         targetValue = int(sys.argv[1])
     if len(sys.argv) > 2:
         replaceValue = sys.argv[2] # str
-    if len(sys.argv) > 3:
-        specialReplaceValue = sys.argv[3] # str
 
-    run_expanse(targetValue, replaceValue, specialReplaceValue)
+    run_expanse(targetValue, replaceValue)
