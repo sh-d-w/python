@@ -1,0 +1,184 @@
+/* Styles applied when the device is held vertically */
+@media (orientation: portrait) {
+    /* body {
+        flex-direction: column;
+    } */
+
+
+    .container {
+        display: flex; /* Aligns child divs in a single row */
+        gap: 10px;     /* Adds space between the divs */
+        font-size: 10px;
+    }
+    .box {
+        flex: 1;      
+            /* Makes all three divs share equal width */
+        border: 1px solid #ccc;
+        padding: 10px;
+    }
+
+    body {
+        flex-direction: column;
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background-color: #f9f9f9;
+    }
+    .form-container {
+        max-width: 100%;
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .form-group {
+        margin-bottom: 15px;
+    }
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+    input, select {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    button {
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+    }
+    button:hover {
+        background-color: #0056b3;
+    }
+
+}
+
+/* Styles applied when the device is held horizontally */
+@media (orientation: landscape) {
+    /* body {
+        flex-direction: row;
+    } */
+
+
+    .container {
+        display: flex; /* Aligns child divs in a single row */
+        gap: 10px;     /* Adds space between the divs */
+        font-size: 10px;
+    }
+    .box {
+        flex: 1;      
+            /* Makes all three divs share equal width */
+        border: 1px solid #ccc;
+        padding: 10px;
+    }
+
+    body {
+        flex-direction: row;
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background-color: #f9f9f9;
+    }
+    .form-container {
+        display: flex; /* Aligns child divs in a single row */
+        max-width: 100%;
+        flex: 1;
+        background: #fff;
+        /* padding: 20px; */
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .form-group {
+        display: inline-block;
+        /* flex: 1; */
+        width: 7.8%;
+        /* min-width: 12%; */
+        /* max-width: 50%;   */
+        margin-bottom: 1px;
+    }
+    label {
+        display: inline-block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+    input, select {
+        display: inline-block;
+
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    button {
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+    }
+    button:hover {
+        background-color: #0056b3;
+    }
+}
+
+
+/* 
+.container {
+    display: flex; 
+    gap: 10px;    
+    font-size: 10px;
+}
+.box {
+    flex: 1;      
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f9f9f9;
+}
+.form-container {
+    max-width: 100%;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.form-group {
+    margin-bottom: 15px;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+input, select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+button:hover {
+    background-color: #0056b3;
+} */

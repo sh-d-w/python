@@ -1,0 +1,6 @@
+Form,<endpoint>,<method>,enctype="multipart/form-data"
+datepicker,<keyword>,<key phrase>,required
+timepicker,<keyword>,<key phrase>,min=,max=
+editbox, <keyword>, <key phrase>,required minlength="3" maxlength="15"
+optionbox,<keyword>, <key phrase>,required, option 1, option 2, option 3
+numberbox,<keyword>, <key phrase>,required min="15" max="30" placeholder="18"
